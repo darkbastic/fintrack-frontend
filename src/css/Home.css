@@ -1,0 +1,186 @@
+/* =============================================
+   HOME PAGE — Specific styles
+   ============================================= */
+
+/* Hero Positioning */
+.home-hero-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero Badge */
+.home-hero-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+}
+
+.home-hero-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* Hero Title / Subtitle */
+.home-hero-desc {
+  max-width: 500px;
+  font-size: 1.05rem;
+}
+
+/* Hero Buttons */
+.home-hero-btn-login {
+  color: #1e40af !important;
+  font-size: 1rem;
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease !important;
+}
+
+.home-hero-btn-login:hover {
+  background-color: #f1f5f9 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.home-hero-btn-register {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 1rem;
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s ease !important;
+}
+
+.home-hero-btn-register:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Hero Stats */
+.home-stat-val {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.home-stat-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 2px;
+}
+
+/* Features Section */
+.home-features-section {
+  padding: 5rem 0;
+}
+
+.home-badge-blue {
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+}
+
+.home-section-title {
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  letter-spacing: -0.025em;
+}
+
+.home-section-desc {
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+/* Benefits Section */
+.home-benefits-section {
+  background: #f8fafc;
+  padding: 5rem 0;
+}
+
+.home-benefits-desc {
+  line-height: 1.7;
+}
+
+/* Benefit Items */
+.ft-benefit-title {
+  font-size: 0.95rem;
+}
+
+.ft-benefit-desc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.ft-benefit-icon--blue {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.ft-benefit-icon--green {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.ft-benefit-icon--purple {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+/* Panel Row income/expenses value colors */
+.home-panel-val--positive {
+  color: #34d399;
+}
+
+.home-panel-val--negative {
+  color: #f87171;
+}
+
+/* Panel Row Final Balance Line */
+.home-panel-total-row {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+}
+
+.home-panel-total-label {
+  color: #fff;
+  font-weight: 700;
+}
+
+.home-panel-total-val {
+  color: #34d399;
+  font-size: 1.1rem;
+}
+
+/* Donut Chart and Legend */
+.home-donut-svg {
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.3));
+}
+
+.home-donut-legend-item {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.home-legend-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.home-legend-dot--green {
+  background: #10b981;
+}
+
+.home-legend-dot--blue {
+  background: #3b82f6;
+}
+
+.home-legend-dot--gray {
+  background: rgba(255, 255, 255, 0.2);
+}

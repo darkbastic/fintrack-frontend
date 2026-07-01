@@ -1,0 +1,318 @@
+/* =============================================
+   FINTRACK — Custom styles (Bootstrap base)
+   ============================================= */
+
+:root {
+  --ft-primary:   #2563eb;
+  --ft-secondary: #10b981;
+  --ft-dark:      #0f172a;
+  --ft-darker:    #060d1a;
+  --ft-font:      'Inter', system-ui, sans-serif;
+}
+
+/* ---------- Base ---------- */
+body {
+  font-family: var(--ft-font);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 { letter-spacing: -0.02em; }
+
+/* ---------- Navbar ---------- */
+.ft-navbar {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.ft-brand {
+  letter-spacing: -0.04em;
+  font-size: 1.35rem;
+}
+
+.ft-brand-icon {
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, var(--ft-primary), #1e40af);
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(37,99,235,.3);
+}
+
+.ft-brand-text .fin  { color: var(--ft-primary); }
+.ft-brand-text .track { color: var(--ft-secondary); }
+
+.ft-nav-link {
+  font-weight: 500;
+  font-size: .92rem;
+  color: #334155 !important;
+  border-radius: 8px;
+  padding: .4rem .9rem !important;
+  transition: background .15s, color .15s;
+}
+.ft-nav-link:hover, .ft-nav-link.active {
+  color: var(--ft-primary) !important;
+  background: #eff6ff;
+}
+
+.ft-nav-btn {
+  font-size: 0.9rem;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.2s ease !important;
+}
+
+.ft-nav-btn:hover {
+  transform: translateY(-1px);
+}
+
+.ft-nav-btn--primary {
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  border: none;
+  transition: opacity 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease !important;
+}
+
+.ft-nav-btn--primary:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+/* ---------- Hero ---------- */
+.ft-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #1e40af 100%);
+  padding-top: 88px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.ft-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 55% 55% at 75% 50%, rgba(37,99,235,.25) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 15% 85%, rgba(16,185,129,.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.ft-hero-title {
+  font-size: clamp(2.1rem, 5vw, 3.6rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+}
+.ft-hero-title .highlight {
+  background: linear-gradient(135deg,#60a5fa,#34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ft-hero-sub { color: rgba(255,255,255,.68); line-height: 1.75; }
+
+/* Dashboard card */
+.ft-dash-card {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 20px;
+  padding: 1.75rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.28);
+  animation: float 5s ease-in-out infinite;
+}
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+
+.ft-dash-label  { font-size:.72rem; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.08em; }
+.ft-dash-value  { font-size:2rem; font-weight:800; color:#fff; letter-spacing:-0.03em; }
+.ft-dash-badge  { background:rgba(16,185,129,.2); color:#34d399; border:1px solid rgba(16,185,129,.3); border-radius:99px; font-size:.72rem; font-weight:600; padding:.15rem .55rem; }
+
+.ft-mini-bar { display:flex; align-items:flex-end; gap:5px; height:60px; }
+.ft-bar { flex:1; border-radius:4px 4px 0 0; }
+.ft-bar-g { background:linear-gradient(to top,#10b981,#34d399); }
+.ft-bar-b { background:linear-gradient(to top,#3b82f6,#60a5fa); }
+.ft-bar-n { background:rgba(255,255,255,.1); }
+
+.ft-metric { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:.7rem; }
+.ft-metric-label { font-size:.68rem; color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.06em; }
+.ft-metric-val   { font-size:1rem; font-weight:700; }
+.text-emerald { color:#34d399; }
+.text-sky     { color:#60a5fa; }
+
+/* ---------- Feature card ---------- */
+.ft-feature-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2rem 1.75rem;
+  height: 100%;
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+  position: relative;
+  overflow: hidden;
+}
+.ft-feature-card::after {
+  content: '';
+  position: absolute; top:0; left:0; right:0; height:3px;
+  background: linear-gradient(90deg,var(--ft-primary),var(--ft-secondary));
+  transform: scaleX(0); transform-origin:left;
+  transition: transform .3s;
+}
+.ft-feature-card:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(37,99,235,.12); border-color:transparent; }
+.ft-feature-card:hover::after { transform:scaleX(1); }
+
+.ft-feat-icon { width:56px; height:56px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.6rem; margin-bottom:1.1rem; }
+.bg-icon-blue   { background:#dbeafe; }
+.bg-icon-green  { background:#d1fae5; }
+.bg-icon-purple { background:#ede9fe; }
+
+.ft-feature-desc {
+  font-size: .95rem;
+  line-height: 1.7;
+}
+
+/* ---------- Benefits ---------- */
+.ft-benefit-item {
+  display:flex; gap:1rem; align-items:flex-start;
+  background:#fff; border:1px solid #e2e8f0; border-radius:14px; padding:1.25rem;
+  transition: transform .22s, box-shadow .22s, border-color .22s;
+  margin-bottom: 1rem;
+}
+.ft-benefit-item:hover { transform:translateX(4px); box-shadow:0 6px 20px rgba(37,99,235,.09); border-color:#bfdbfe; }
+.ft-benefit-icon { width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.15rem; flex-shrink:0; }
+
+/* Benefit panel */
+.ft-panel {
+  background: linear-gradient(135deg,#0f172a,#1e3a8a);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+.ft-panel-row { display:flex; justify-content:space-between; align-items:center; padding:.75rem 0; border-bottom:1px solid rgba(255,255,255,.07); }
+.ft-panel-row:last-of-type { border-bottom:none; }
+.ft-panel-label { font-size:.88rem; color:rgba(255,255,255,.6); }
+.ft-panel-val { font-size:.95rem; font-weight:700; }
+
+/* ---------- CTA ---------- */
+.ft-cta {
+  background: linear-gradient(135deg,#0f172a,#1e40af);
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 0;
+}
+.ft-cta::before {
+  content:''; position:absolute; inset:0;
+  background: radial-gradient(ellipse 70% 70% at 50% 120%, rgba(16,185,129,.22) 0%, transparent 65%);
+  pointer-events:none;
+}
+.ft-cta-title { font-size:clamp(1.9rem,4vw,2.9rem); font-weight:800; color:#fff; letter-spacing:-0.025em; }
+
+.ft-cta-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.ft-cta-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: .8rem;
+  letter-spacing: .06em;
+  padding: 0.5rem 1.2rem !important;
+}
+
+.ft-cta-highlight {
+  background: linear-gradient(135deg,#60a5fa,#34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ft-cta-desc {
+  color: rgba(255,255,255,.68);
+  font-size: 1.05rem;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+
+.ft-cta-btn {
+  font-size: 1rem;
+  color: #1e40af;
+  letter-spacing: -.01em;
+}
+
+.ft-cta-footer-text {
+  color: rgba(255,255,255,.35);
+  font-size: .82rem;
+}
+
+.ft-cta-check-icon {
+  color: #10b981;
+}
+
+/* ---------- Footer ---------- */
+.ft-footer { background:var(--ft-darker); border-top:1px solid #1e293b; }
+.ft-footer-link { color:rgba(255,255,255,.5); font-size:.9rem; display:block; margin-bottom:.55rem; transition:color .15s, padding-left .15s; cursor:pointer; text-decoration:none; }
+.ft-footer-link:hover { color:#fff; padding-left:3px; }
+.ft-footer-heading { font-size:.72rem; font-weight:700; color:rgba(255,255,255,.3); text-transform:uppercase; letter-spacing:.12em; margin-bottom:1rem; }
+.ft-social { width:36px; height:36px; border-radius:8px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); display:inline-flex; align-items:center; justify-content:center; color:rgba(255,255,255,.5); transition:background .18s, color .18s, transform .18s; text-decoration:none; }
+.ft-social:hover { background:var(--ft-primary); color:#fff; transform:translateY(-2px); }
+
+.ft-footer-brand-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.ft-footer-brand-fin {
+  color: #60a5fa;
+}
+
+.ft-footer-brand-track {
+  color: #34d399;
+}
+
+.ft-footer-brand-desc {
+  color: rgba(255,255,255,.45);
+  font-size: .9rem;
+  max-width: 230px;
+}
+
+.ft-footer-divider {
+  border-color: #1e293b;
+  margin: 2.5rem 0 1.5rem;
+}
+
+.ft-footer-copy {
+  color: rgba(255,255,255,.3);
+  font-size: .85rem;
+}
+
+.ft-footer-copy-highlight {
+  color: rgba(255,255,255,.5);
+}
+
+/* ---------- Coming Soon ---------- */
+.ft-soon { min-height:100vh; display:flex; align-items:center; justify-content:center; background:#f8fafc; padding-top:80px; }
+.ft-soon-card { background:#fff; border:1px solid #e2e8f0; border-radius:20px; padding:3.5rem 2.5rem; text-align:center; max-width:440px; width:100%; box-shadow:0 10px 40px rgba(37,99,235,.08); }
+.ft-soon-icon { width:72px; height:72px; background:#dbeafe; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:2.2rem; margin:0 auto 1.25rem; }
+
+.ft-soon-title {
+  font-size: 1.65rem;
+}
+
+.ft-soon-desc {
+  line-height: 1.7;
+}
+
+.ft-soon-btn {
+  background: linear-gradient(135deg,#2563eb,#1e40af);
+  border: none;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+.anim-1 { animation: fadeUp .6s ease both; }
+.anim-2 { animation: fadeUp .6s .12s ease both; }
+.anim-3 { animation: fadeUp .6s .24s ease both; }
+.anim-4 { animation: fadeUp .6s .36s ease both; }

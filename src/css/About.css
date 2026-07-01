@@ -1,0 +1,149 @@
+/* =============================================
+   ABOUT PAGE — Specific styles
+   ============================================= */
+
+/* ---------- Hero ---------- */
+.ab-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #1e40af 100%);
+  padding-top: 110px;
+  padding-bottom: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ab-hero-blob {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 55% 65% at 80% 50%, rgba(37, 99, 235, .22) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 10% 90%, rgba(16, 185, 129, .15) 0%, transparent 60%);
+}
+
+.ab-hero-badge {
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .15);
+  color: rgba(255, 255, 255, .85);
+  font-size: .8rem;
+  letter-spacing: .06em;
+}
+
+.ab-hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.ab-hero-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  margin-bottom: 1rem;
+}
+
+.ab-hero-desc {
+  max-width: 620px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* ---------- Mission & Vision ---------- */
+.ab-mv-section {
+  background: #f8fafc;
+  padding: 5rem 0;
+}
+
+.ab-mv-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2.25rem 2rem;
+  height: 100%;
+  box-shadow: 0 8px 32px rgba(37, 99, 235, .07);
+  transition: transform .25s, box-shadow .25s;
+}
+.ab-mv-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(37, 99, 235, .13);
+}
+
+.ab-mv-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.1rem;
+}
+.ab-mv-icon--mission { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+.ab-mv-icon--vision  { background: linear-gradient(135deg, #d1fae5, #a7f3d0); }
+
+.ab-mv-heading {
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.ab-mv-text {
+  color: #475569;
+  line-height: 1.8;
+  margin-bottom: 0;
+  font-size: .97rem;
+}
+
+/* ---------- Values ---------- */
+.ab-values-section {
+  background: #fff;
+  padding: 5rem 0;
+}
+
+.ab-values-badge {
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: .78rem;
+  letter-spacing: .08em;
+}
+
+.ab-values-heading {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  letter-spacing: -0.025em;
+  color: #0f172a;
+}
+
+.ab-value-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  font-size: 1.7rem;
+}
+
+.ab-value-title {
+  font-size: 1.1rem;
+  color: #0f172a;
+  letter-spacing: -0.015em;
+}
+
+.ab-value-desc {
+  font-size: .92rem;
+  line-height: 1.7;
+}
+
+/* ---------- CTA ---------- */
+.ab-cta-title {
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+}
+
+.ab-cta-btn {
+  color: #1e40af;
+  font-size: 1rem;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* ---------- Value icon color variants ---------- */
+.ab-value-icon--blue   { background: #dbeafe; color: #2563eb; }
+.ab-value-icon--green  { background: #d1fae5; color: #059669; }
+.ab-value-icon--purple { background: #ede9fe; color: #7c3aed; }

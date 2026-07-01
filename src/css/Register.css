@@ -1,0 +1,343 @@
+/* =============================================
+   REGISTER PAGE — Specific styles
+   ============================================= */
+
+.rg-container {
+  min-height: 100vh;
+}
+
+/* Left panel - illustration side */
+.rg-left-side {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #1e40af 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.rg-left-blob {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 60% at 80% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 20% 80%, rgba(37, 99, 235, 0.2) 0%, transparent 60%);
+}
+
+.rg-left-content {
+  position: relative;
+  z-index: 2;
+  max-width: 440px;
+  text-align: center;
+}
+
+.rg-left-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.rg-left-title .highlight {
+  background: linear-gradient(135deg, #60a5fa, #34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rg-left-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+/* Float Mockup Dashboard Card */
+.rg-mockup {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 1.75rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  animation: rg-float 6s ease-in-out infinite;
+}
+
+@keyframes rg-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.rg-mockup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.rg-mockup-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.rg-mockup-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.rg-mockup-badge {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 99px;
+}
+
+.rg-mockup-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.rg-mockup-stat {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rg-mockup-stat-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.rg-mockup-stat-val {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.rg-mockup-stat-val--positive {
+  color: #34d399;
+}
+
+/* Right panel - form side */
+.rg-right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background: #f8fafc;
+}
+
+/* Card */
+.rg-card-wrapper {
+  max-width: 420px;
+  width: 100%;
+}
+
+.rg-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2.25rem;
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.03);
+}
+
+.rg-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+}
+
+.rg-subtitle {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 1.75rem;
+}
+
+/* Input Styles */
+.rg-input-wrapper {
+  margin-bottom: 1.15rem;
+}
+
+.rg-input-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.rg-input-container {
+  position: relative;
+}
+
+.rg-input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 1.05rem;
+}
+
+.rg-input {
+  width: 100%;
+  padding: 0.65rem 1rem 0.65rem 2.6rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 0.92rem;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+  outline: none;
+}
+
+.rg-input:focus {
+  border-color: #2563eb;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Register Button */
+.rg-btn-submit {
+  width: 100%;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  padding: 0.75rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: opacity 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.rg-btn-submit:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.rg-btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Policy Checkbox */
+.rg-policy-label {
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* Footer Links */
+.rg-footer-text {
+  text-align: center;
+  font-size: 0.88rem;
+  color: #64748b;
+  margin-top: 1.25rem;
+  margin-bottom: 0;
+}
+
+.rg-footer-link {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.rg-footer-link:hover {
+  color: #1d4ed8;
+}
+
+/* Divider */
+.rg-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  margin: 1.25rem 0;
+}
+
+.rg-divider::before,
+.rg-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1.5px solid #e2e8f0;
+}
+
+.rg-divider:not(:empty)::before {
+  margin-right: .75em;
+}
+
+.rg-divider:not(:empty)::after {
+  margin-left: .75em;
+}
+
+/* Social Buttons */
+.rg-social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.rg-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0.65rem;
+  border: 1.5px solid #e2e8f0;
+  background: #fff;
+  border-radius: 10px;
+  color: #334155;
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: background 0.15s, border-color 0.15s;
+  cursor: default;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+.rg-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  transition: color 0.15s;
+}
+
+.rg-back-btn:hover {
+  color: #0f172a;
+}

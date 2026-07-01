@@ -1,0 +1,287 @@
+/* =============================================
+   CONTACT PAGE — Specific styles
+   ============================================= */
+
+/* ---------- Hero ---------- */
+.ct-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #1e40af 100%);
+  padding-top: 110px;
+  padding-bottom: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ct-hero-blob {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 55% 65% at 20% 50%, rgba(37, 99, 235, .22) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 85% 85%, rgba(16, 185, 129, .15) 0%, transparent 60%);
+}
+
+.ct-hero-badge {
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .15);
+  color: rgba(255, 255, 255, .85);
+  font-size: .8rem;
+  letter-spacing: .06em;
+}
+
+.ct-hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.ct-hero-title {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  margin-bottom: 1rem;
+}
+
+.ct-hero-desc {
+  max-width: 580px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* ---------- Main section ---------- */
+.ct-main {
+  background: #f8fafc;
+  padding: 5rem 0;
+}
+
+/* ---------- Form card ---------- */
+.ct-form-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 8px 32px rgba(37, 99, 235, .07);
+  height: 100%;
+}
+
+.ct-form-label {
+  font-size: .88rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: .4rem;
+}
+
+.ct-form-control {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: .65rem 1rem;
+  font-size: .95rem;
+  color: #0f172a;
+  transition: border-color .2s, box-shadow .2s;
+  width: 100%;
+  background: #f8fafc;
+  outline: none;
+  font-family: inherit;
+}
+.ct-form-control:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .12);
+  background: #fff;
+}
+.ct-form-control::placeholder {
+  color: #94a3b8;
+}
+
+.ct-form-textarea {
+  resize: none;
+  min-height: 140px;
+}
+
+.ct-submit-btn {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  border: none;
+  border-radius: 99px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: .75rem 2.2rem;
+  width: 100%;
+  transition: opacity .2s, transform .2s;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ---------- Contact info cards ---------- */
+.ct-info-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, .06);
+  transition: transform .22s, box-shadow .22s, border-color .22s;
+  text-decoration: none;
+  color: inherit;
+}
+.ct-info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(37, 99, 235, .11);
+  border-color: #bfdbfe;
+  color: inherit;
+}
+
+.ct-info-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.ct-info-label {
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: #94a3b8;
+  margin-bottom: .2rem;
+}
+
+.ct-info-value {
+  font-size: .95rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+}
+
+/* ---------- FAQ section ---------- */
+.ct-faq-section {
+  background: #fff;
+  padding: 5rem 0;
+}
+
+.ct-faq-heading {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  letter-spacing: -0.025em;
+  color: #0f172a;
+}
+
+.ct-accordion .accordion-button {
+  font-weight: 600;
+  font-size: .97rem;
+  color: #0f172a;
+  background: #f8fafc;
+  border-radius: 12px !important;
+  box-shadow: none;
+}
+.ct-accordion .accordion-button:not(.collapsed) {
+  color: #2563eb;
+  background: #eff6ff;
+  box-shadow: none;
+}
+.ct-accordion .accordion-button::after {
+  filter: none;
+}
+.ct-accordion .accordion-item {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px !important;
+  overflow: hidden;
+  margin-bottom: .75rem;
+}
+.ct-accordion .accordion-body {
+  font-size: .93rem;
+  color: #475569;
+  line-height: 1.75;
+  background: #fff;
+}
+
+/* ---------- Map placeholder ---------- */
+.ct-map-section {
+  background: #f8fafc;
+  padding: 5rem 0;
+}
+
+.ct-map-container {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  border-radius: 20px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .22);
+}
+
+.ct-map-blob {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 60% at 50% 50%, rgba(37, 99, 235, .2) 0%, transparent 70%);
+}
+
+.ct-map-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .1);
+  border: 1.5px solid rgba(255, 255, 255, .18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  position: relative;
+}
+
+.ct-map-label {
+  color: rgba(255, 255, 255, .9);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+  position: relative;
+}
+
+.ct-map-sub {
+  color: rgba(255, 255, 255, .5);
+  font-size: .88rem;
+  position: relative;
+}
+
+/* ---------- Hero z-index container ---------- */
+.ct-hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------- Form card texts ---------- */
+.ct-form-title {
+  font-size: 1.3rem;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.ct-form-subtitle {
+  font-size: .9rem;
+}
+
+/* ---------- FAQ badge ---------- */
+.ct-faq-badge {
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: .78rem;
+  letter-spacing: .08em;
+}
+
+/* ---------- Info icon color variants ---------- */
+.ct-info-icon--blue   { background: #dbeafe; color: #2563eb; }
+.ct-info-icon--green  { background: #d1fae5; color: #059669; }
+.ct-info-icon--purple { background: #ede9fe; color: #7c3aed; }
+.ct-info-icon--amber  { background: #fef3c7; color: #d97706; }
