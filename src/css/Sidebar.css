@@ -1,0 +1,127 @@
+/* =============================================
+   SIDEBAR — Component specific styles
+   ============================================= */
+
+.ft-sidebar {
+  background: #0f172a; /* Same deep dark color as hero */
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 260px;
+  z-index: 1040;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sidebar-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1030;
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Header */
+.sidebar-header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Sidebar navigation list */
+.sidebar-nav {
+  flex: 1;
+  padding: 1.5rem 1rem;
+  overflow-y: auto;
+}
+
+/* Links */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-link-icon {
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Active Link State */
+.sidebar-link.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--ft-primary), #1e40af);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+/* Footer / Logout */
+.sidebar-footer {
+  padding: 1.25rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.logout-link {
+  color: #f87171;
+}
+
+.logout-link:hover {
+  color: #ffffff;
+  background: rgba(248, 113, 113, 0.15);
+}
+
+/* ────────────────────────────────────────────────────────
+   RESPONSIVENESS (Mobile/Tablet vs Desktop)
+   ──────────────────────────────────────────────────────── */
+
+/* Desktop (large screens and above) */
+@media (min-width: 992px) {
+  .ft-sidebar {
+    transform: none !important;
+  }
+  
+  .sidebar-header .btn-close {
+    display: none;
+  }
+}
+
+/* Mobile & Tablet (below large screen breakpoint) */
+@media (max-width: 991.98px) {
+  .ft-sidebar {
+    transform: translateX(-100%);
+    box-shadow: none;
+  }
+
+  .ft-sidebar.sidebar-open {
+    transform: translateX(0);
+    box-shadow: 15px 0 30px rgba(0, 0, 0, 0.25);
+  }
+  
+  .sidebar-header {
+    padding-right: 1rem;
+  }
+}

@@ -1,0 +1,48 @@
+/* =============================================
+   DASHBOARD PAGE — Layout Styles
+   ============================================= */
+
+/* Main layout card wrapper */
+.dashboard-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 16px -6px rgba(15, 23, 42, 0.04);
+}
+
+.card-header-dashboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.card-title-dashboard {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.015em;
+}
+
+.card-subtitle-dashboard {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+@media (max-width: 767.98px) {
+  .dashboard-card {
+    padding: 1.25rem 1rem;
+  }
+  .card-title-dashboard {
+    font-size: 1.05rem;
+  }
+}

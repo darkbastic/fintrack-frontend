@@ -36,14 +36,12 @@ const LoginForm = () => (
 
       {/* Submit Button */}
       <div className="col-12 mt-2">
-        <button
-          type="button"
-          className="rg-btn-submit"
-          tabIndex={-1}
-          aria-disabled="true"
+        <Link
+          to="/dashboard"
+          className="btn rg-btn-submit text-decoration-none d-block text-center"
         >
           Iniciar sesión
-        </button>
+        </Link>
       </div>
 
       {/* Register redirect link */}

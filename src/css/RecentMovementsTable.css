@@ -1,0 +1,73 @@
+/* =============================================
+   RECENT MOVEMENTS TABLE — Component specific styles
+   ============================================= */
+
+.custom-table-dashboard th {
+  font-size: 0.8rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.custom-table-dashboard td {
+  padding: 1rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.custom-table-dashboard tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.custom-table-dashboard tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.tx-concept {
+  font-size: 0.88rem;
+  color: #0f172a;
+}
+
+.tx-icon-wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+}
+
+.tx-icon-wrapper--income {
+  background: #e6fcf5;
+  color: #0ca678;
+}
+
+.tx-icon-wrapper--expense {
+  background: #fff5f5;
+  color: #fa5252;
+}
+
+.tx-category-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.tx-date {
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.btn-view-all {
+  font-size: 0.82rem;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 767.98px) {
+  .custom-table-dashboard td {
+    padding: 0.85rem 0.5rem;
+  }
+}

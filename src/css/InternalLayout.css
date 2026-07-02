@@ -1,0 +1,40 @@
+/* =============================================
+   INTERNAL LAYOUT — Structure and spacing
+   ============================================= */
+
+.ft-internal-layout {
+  min-height: 100vh;
+  display: flex;
+  background-color: #f8fafc; /* Sleek light background for dashboard */
+}
+
+.ft-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  flex: 1;
+  width: 100%;
+  transition: margin-left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ft-main-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-x: hidden;
+}
+
+/* ────────────────────────────────────────────────────────
+   RESPONSIVENESS (Desktop offset)
+   ──────────────────────────────────────────────────────── */
+
+@media (min-width: 992px) {
+  .ft-content-wrapper {
+    margin-left: 260px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ft-main-content {
+    padding: 1.25rem 1rem;
+  }
+}
