@@ -23,7 +23,8 @@ import Reportes    from './pages/Reportes.jsx'
 import Perfil      from './pages/Perfil.jsx'
 
 // Layouts
-import InternalLayout from './components/InternalLayout.jsx'
+import InternalLayout from './layouts/InternalLayout.jsx'
+import ProtectedRoute from './guards/ProtectedRoute.jsx'
 
 /* ── App entry ───────────────────────────────────────────── */
 createRoot(document.getElementById('root')).render(
@@ -37,12 +38,18 @@ createRoot(document.getElementById('root')).render(
         <Route path="/contact"  element={<Contact />}  />
         
         {/* Rutas Internas Privadas (Panel de Administración) */}
-        <Route element={<InternalLayout />}>
-          <Route path="/dashboard"   element={<Dashboard />}   />
+        <Route
+          element={
+            <ProtectedRoute>
+              <InternalLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route path="/dashboard"   element={<Dashboard />} />
           <Route path="/movimientos" element={<Movimientos />} />
-          <Route path="/categorias"  element={<Categorias />}  />
-          <Route path="/reportes"    element={<Reportes />}    />
-          <Route path="/perfil"      element={<Perfil />}      />
+          <Route path="/categorias"  element={<Categorias />} />
+          <Route path="/reportes"    element={<Reportes />} />
+          <Route path="/perfil"      element={<Perfil />} />
         </Route>
       </Routes>
     </BrowserRouter>
