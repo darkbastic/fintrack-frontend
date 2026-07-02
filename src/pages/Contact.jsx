@@ -1,6 +1,7 @@
 import Navbar      from '../components/Navbar.jsx'
 import Footer      from '../components/Footer.jsx'
 import ContactForm from '../components/ContactForm.jsx'
+import ContactInfoCard from '../components/ContactInfoCard.jsx'
 import FaqItem     from '../components/FaqItem.jsx'
 import { CONTACT_INFO, FAQS } from '../data/contactData'
 import '../css/Contact.css'
@@ -43,21 +44,16 @@ const Contact = () => (
           {/* ── Contact info cards ── */}
           <div className="col-lg-5 anim-2">
             <div className="d-flex flex-column gap-3">
-              {CONTACT_INFO.map(({ icon, iconClass, label, value, href }) => {
-                const Tag = href ? 'a' : 'div'
-                const linkProps = href ? { href, target: '_blank', rel: 'noopener noreferrer' } : {}
-                return (
-                  <Tag key={label} className="ct-info-card" {...linkProps}>
-                    <div className={`ct-info-icon ${iconClass}`}>
-                      <i className={`bi ${icon}`} />
-                    </div>
-                    <div>
-                      <p className="ct-info-label">{label}</p>
-                      <p className="ct-info-value">{value}</p>
-                    </div>
-                  </Tag>
-                )
-              })}
+              {CONTACT_INFO.map((info) => (
+                <ContactInfoCard
+                  key={info.label}
+                  icon={info.icon}
+                  iconClass={info.iconClass}
+                  label={info.label}
+                  value={info.value}
+                  href={info.href}
+                />
+              ))}
             </div>
           </div>
 

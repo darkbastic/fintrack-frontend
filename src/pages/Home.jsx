@@ -3,7 +3,9 @@ import Navbar      from '../components/Navbar.jsx'
 import Footer      from '../components/Footer.jsx'
 import FeatureCard from '../components/FeatureCard'
 import CTASection  from '../components/CTASection'
-import { FEATURES, BENEFITS, PANEL_ROWS, DONUT_LEGEND, HERO_STATS } from '../data/landingData'
+import BenefitItem from '../components/BenefitItem.jsx'
+import DemoDashboardPanel from '../components/DemoDashboardPanel.jsx'
+import { FEATURES, BENEFITS, HERO_STATS } from '../data/landingData'
 import '../css/Home.css'
 
 const Home = () => {
@@ -100,60 +102,19 @@ const Home = () => {
               </p>
 
               {BENEFITS.map((b) => (
-                <div className="ft-benefit-item" key={b.title}>
-                  <div className={`ft-benefit-icon ${b.iconClass}`}>
-                    <i className={`bi ${b.icon}`} />
-                  </div>
-                  <div>
-                    <p className="fw-bold text-dark mb-1 ft-benefit-title">{b.title}</p>
-                    <p className="text-secondary mb-0 ft-benefit-desc">{b.desc}</p>
-                  </div>
-                </div>
+                <BenefitItem
+                  key={b.title}
+                  icon={b.icon}
+                  iconClass={b.iconClass}
+                  title={b.title}
+                  desc={b.desc}
+                />
               ))}
             </div>
 
             {/* Right: panel */}
             <div className="col-lg-6">
-              <div className="ft-panel">
-                <p className="ft-dash-label mb-3">Resumen del mes · Junio 2025</p>
-
-                {PANEL_ROWS.map((r) => (
-                  <div className="ft-panel-row" key={r.label}>
-                    <span className="ft-panel-label">
-                      <i className={`bi ${r.icon} me-2 text-white-50`} />
-                      {r.label}
-                    </span>
-                    <span className={`ft-panel-val ${r.cls}`}>{r.val}</span>
-                  </div>
-                ))}
-
-                <div className="ft-panel-row home-panel-total-row">
-                  <span className="home-panel-total-label">Balance neto</span>
-                  <span className="ft-panel-val home-panel-total-val">+$5,000</span>
-                </div>
-
-                {/* Donut chart */}
-                <div className="d-flex flex-column align-items-center mt-4 gap-3">
-                  <svg width="130" height="130" viewBox="0 0 130 130" className="home-donut-svg">
-                    <circle cx="65" cy="65" r="50" fill="none" stroke="rgba(255,255,255,.06)" strokeWidth="18"/>
-                    <circle cx="65" cy="65" r="50" fill="none" stroke="#10b981" strokeWidth="18"
-                      strokeDasharray="210 314" strokeDashoffset="78" strokeLinecap="round"/>
-                    <circle cx="65" cy="65" r="50" fill="none" stroke="#3b82f6" strokeWidth="18"
-                      strokeDasharray="104 314" strokeDashoffset="-131" strokeLinecap="round"/>
-                    <text x="65" y="60" textAnchor="middle" fill="white" fontSize="12" fontWeight="700" fontFamily="Inter,sans-serif">Ahorro</text>
-                    <text x="65" y="76" textAnchor="middle" fill="#34d399" fontSize="13" fontWeight="800" fontFamily="Inter,sans-serif">40%</text>
-                  </svg>
-                  <div className="d-flex gap-3">
-                    {DONUT_LEGEND.map(({ dotClass, label }) => (
-                      <div key={label} className="d-flex align-items-center gap-1 home-donut-legend-item">
-                        <span className={`home-legend-dot ${dotClass}`} />
-                        {label}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-              </div>
+              <DemoDashboardPanel />
             </div>
 
           </div>
