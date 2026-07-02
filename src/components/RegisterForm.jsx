@@ -1,73 +1,15 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const RegisterForm = () => {
-  const [name, setName] = useState('')
-  const [lastname, setLastname] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
+const RegisterForm = ({ onSubmit }) => {
   const [accepted, setAccepted] = useState(false)
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
-  const [success, setSuccess] = useState(false)
-
-  const handleRegister = (e) => {
-    e.preventDefault()
-    setError(null)
-    setSuccess(false)
-
-    if (!accepted) {
-      setError('Debes aceptar los Términos y Condiciones.')
-      return
-    }
-
-    if (password !== confirmPassword) {
-      setError('Las contraseñas no coinciden.')
-      return
-    }
-
-    if (password.length < 6) {
-      setError('La contraseña debe tener al menos 6 caracteres.')
-      return
-    }
-
-    setLoading(true)
-
-    // Simulación de registro local en el frontend
-    setTimeout(() => {
-      setSuccess(true)
-      setLoading(false)
-      // Limpiar el formulario
-      setName('')
-      setLastname('')
-      setEmail('')
-      setPassword('')
-      setConfirmPassword('')
-      setAccepted(false)
-    }, 1200)
-  }
 
   return (
     <div className="rg-card">
       <h2 className="rg-title mb-1 text-center text-lg-start">Crear cuenta</h2>
       <p className="rg-subtitle text-center text-lg-start">Registra tus datos para empezar en FinTrack.</p>
 
-      {error && (
-        <div className="alert alert-danger py-2 px-3 mb-3 text-start small" role="alert">
-          <i className="bi bi-exclamation-triangle-fill me-2"></i>
-          {error}
-        </div>
-      )}
-
-      {success && (
-        <div className="alert alert-success py-2 px-3 mb-3 text-start small" role="alert">
-          <i className="bi bi-check-circle-fill me-2"></i>
-          Registro cuenta exitoso.
-        </div>
-      )}
-
-      <form onSubmit={handleRegister} className="row g-0">
+      <form onSubmit={onSubmit} className="row g-0">
         {/* Nombre */}
         <div className="col-12 rg-input-wrapper">
           <label htmlFor="rg-name" className="rg-input-label">Nombre completo</label>
@@ -75,11 +17,10 @@ const RegisterForm = () => {
             <i className="bi bi-person rg-input-icon" />
             <input
               id="rg-name"
+              name="name"
               type="text"
               className="rg-input"
               placeholder="Ej. Juan"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
               required
             />
           </div>
@@ -92,11 +33,10 @@ const RegisterForm = () => {
             <i className="bi bi-person rg-input-icon" />
             <input
               id="rg-surname"
+              name="lastname"
               type="text"
               className="rg-input"
               placeholder="Ej. Pérez"
-              value={lastname}
-              onChange={(e) => setLastname(e.target.value)}
               required
             />
           </div>
@@ -109,11 +49,10 @@ const RegisterForm = () => {
             <i className="bi bi-envelope rg-input-icon" />
             <input
               id="rg-email"
+              name="email"
               type="email"
               className="rg-input"
               placeholder="correo@ejemplo.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
@@ -126,11 +65,10 @@ const RegisterForm = () => {
             <i className="bi bi-lock rg-input-icon" />
             <input
               id="rg-password"
+              name="password"
               type="password"
               className="rg-input"
               placeholder="••••••••"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
@@ -143,11 +81,10 @@ const RegisterForm = () => {
             <i className="bi bi-lock rg-input-icon" />
             <input
               id="rg-confirm-password"
+              name="confirmPassword"
               type="password"
               className="rg-input"
               placeholder="••••••••"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
               required
             />
           </div>
@@ -174,9 +111,9 @@ const RegisterForm = () => {
           <button
             type="submit"
             className="rg-btn-submit"
-            disabled={!accepted || loading}
+            disabled={!accepted}
           >
-            {loading ? 'Creando cuenta...' : 'Crear cuenta'}
+            Crear cuenta
           </button>
         </div>
 
