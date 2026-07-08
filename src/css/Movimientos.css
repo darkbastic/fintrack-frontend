@@ -2,25 +2,155 @@
    MOVIMIENTOS PAGE — Styles
    ============================================= */
 
-.card-placeholder {
+/* Contenedor de Métricas del Balance */
+.mov-metric-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 20px;
-  padding: 3rem 2rem;
-  text-align: center;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  max-width: 600px;
-  margin: 2rem auto;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  transition: transform 0.25s, box-shadow 0.25s;
+  height: 100%;
 }
 
-.placeholder-icon {
-  width: 64px;
-  height: 64px;
-  background: #eff6ff;
-  border-radius: 16px;
+.mov-metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.06);
+}
+
+.mov-metric-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
-  margin: 0 auto 1.5rem;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.mov-metric-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+}
+
+.mov-metric-val {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Filtros */
+.mov-filters-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+}
+
+.filter-select {
+  padding: 0.65rem 1rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-size: 0.92rem;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.2s, background-color 0.2s;
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  border-color: var(--ft-primary);
+  background-color: #ffffff;
+}
+
+/* Lista de transacciones */
+.mov-list-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+}
+
+.mov-item-row {
+  border-bottom: 1px solid #f1f5f9;
+  padding: 1rem 0.5rem;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.mov-item-row:last-child {
+  border-bottom: none;
+}
+
+.mov-item-row:hover {
+  background-color: #f8fafc;
+  border-radius: 12px;
+}
+
+.mov-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.mov-badge {
+  font-size: 0.72rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+.mov-amount {
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-align: right;
+}
+
+.mov-amount.positive {
+  color: #10b981;
+}
+
+.mov-amount.negative {
+  color: #ef4444;
+}
+
+.btn-action-mov {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #64748b;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-action-mov:hover {
+  background: #f1f5f9;
+  color: var(--ft-primary);
+}
+
+.btn-action-mov.delete:hover {
+  background: #fef2f2;
+  color: #ef4444;
 }

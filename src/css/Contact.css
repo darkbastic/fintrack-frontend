@@ -107,7 +107,12 @@
   padding: .75rem 2.2rem;
   width: 100%;
   transition: opacity .2s, transform .2s;
-  cursor: default;
+  cursor: pointer;
+}
+
+.ct-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
   pointer-events: none;
 }
 

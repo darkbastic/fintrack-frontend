@@ -6,9 +6,13 @@ const Sidebar = ({ isOpen, onClose }) => {
     { name: 'Dashboard', path: '/dashboard', icon: 'bi-grid-1x2-fill' },
     { name: 'Movimientos', path: '/movimientos', icon: 'bi-arrow-left-right' },
     { name: 'Categorías', path: '/categorias', icon: 'bi-tags-fill' },
-    { name: 'Reportes', path: '/reportes', icon: 'bi-bar-chart-line-fill' },
     { name: 'Perfil', path: '/perfil', icon: 'bi-person-fill' },
   ]
+
+  // Función simple para cerrar la sesión limpiando el token de autenticación
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+  };
 
   return (
     <>
@@ -52,7 +56,7 @@ const Sidebar = ({ isOpen, onClose }) => {
         </nav>
 
         <div className="sidebar-footer">
-          <Link to="/" className="sidebar-link logout-link">
+          <Link to="/" className="sidebar-link logout-link" onClick={handleLogout}>
             <i className="bi bi-box-arrow-left sidebar-link-icon" />
             <span className="sidebar-link-text">Cerrar sesión</span>
           </Link>

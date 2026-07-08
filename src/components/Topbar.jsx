@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom'
 import '../css/Topbar.css'
 
-const Topbar = ({ onToggleSidebar }) => {
+const Topbar = ({ onToggleSidebar, user, loading }) => {
   const location = useLocation()
 
   // Dynamic header based on the active route
@@ -13,13 +13,20 @@ const Topbar = ({ onToggleSidebar }) => {
         return 'Movimientos'
       case '/categorias':
         return 'Categorías'
-      case '/reportes':
-        return 'Reportes'
       case '/perfil':
         return 'Mi Perfil'
       default:
         return 'FinTrack'
     }
+  }
+
+  const getAvatarInitials = () => {
+    if (!user) {
+      return "U";
+    }
+    const firstName = user.name ? user.name[0] : "";
+    const lastName = user.lastname ? user.lastname[0] : "";
+    return (firstName + lastName).toUpperCase() || "U";
   }
 
   return (
@@ -42,10 +49,12 @@ const Topbar = ({ onToggleSidebar }) => {
       <div className="topbar-right d-flex align-items-center gap-3">
         {/* Profile Dropdown Mockup */}
         <div className="d-flex align-items-center gap-2 profile-info">
-          <div className="profile-avatar">U</div>
+          <div className="profile-avatar">{getAvatarInitials()}</div>
           <div className="d-none d-sm-block text-start">
-            <div className="profile-name">Usuario Demo</div>
-            <div className="profile-role">Plan Premium</div>
+            <div className="profile-role">Bienvenido</div>
+            <div className="profile-user">
+              {loading ? "Cargando..." : user ? `${user.name} ${user.lastname}` : "Invitado"}
+            </div>
           </div>
         </div>
       </div>
