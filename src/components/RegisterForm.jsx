@@ -15,6 +15,8 @@ const RegisterForm = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleChange = ({ target }) => {
     setForm({
@@ -140,13 +142,21 @@ const RegisterForm = () => {
             <input
               id="rg-password"
               name="password"
-              type="password"
+              type={showPassword ? "text" : "password"}
               className="rg-input"
               placeholder="••••••••"
               value={form.password}
               onChange={handleChange}
               required
             />
+            <button
+              type="button"
+              className="password-toggle-btn"
+              onClick={() => setShowPassword(!showPassword)}
+              aria-label={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
+            >
+              <i className={`bi ${showPassword ? 'bi-eye-slash' : 'bi-eye'}`}></i>
+            </button>
           </div>
         </div>
 
@@ -160,13 +170,21 @@ const RegisterForm = () => {
             <input
               id="rg-confirm-password"
               name="confirmPassword"
-              type="password"
+              type={showConfirmPassword ? "text" : "password"}
               className="rg-input"
               placeholder="••••••••"
               value={form.confirmPassword}
               onChange={handleChange}
               required
             />
+            <button
+              type="button"
+              className="password-toggle-btn"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              aria-label={showConfirmPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
+            >
+              <i className={`bi ${showConfirmPassword ? 'bi-eye-slash' : 'bi-eye'}`}></i>
+            </button>
           </div>
         </div>
 

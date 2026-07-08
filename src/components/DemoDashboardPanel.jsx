@@ -17,7 +17,7 @@ const DemoDashboardPanel = () => {
 
       <div className="ft-panel-row home-panel-total-row">
         <span className="home-panel-total-label">Balance neto</span>
-        <span className="ft-panel-val home-panel-total-val">+$5,000</span>
+        <span className="ft-panel-val home-panel-total-val">+$5.000</span>
       </div>
 
       {/* Donut legend as plain text */}

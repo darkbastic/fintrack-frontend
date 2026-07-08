@@ -1,14 +1,42 @@
-import { Link } from 'react-router-dom'
-import Navbar      from '../components/Navbar.jsx'
-import Footer      from '../components/Footer.jsx'
-import FeatureCard from '../components/FeatureCard'
-import CTASection  from '../components/CTASection'
-import BenefitItem from '../components/BenefitItem.jsx'
-import DemoDashboardPanel from '../components/DemoDashboardPanel.jsx'
-import { FEATURES, BENEFITS, HERO_STATS } from '../data/landingData'
-import '../css/Home.css'
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Navbar      from '../components/Navbar.jsx';
+import Footer      from '../components/Footer.jsx';
+import FeatureCard from '../components/FeatureCard';
+import CTASection  from '../components/CTASection';
+import BenefitItem from '../components/BenefitItem.jsx';
+import DemoDashboardPanel from '../components/DemoDashboardPanel.jsx';
+import { FEATURES, BENEFITS } from '../data/landingData';
+import { getAppStats } from '../api/stats.api.js';
+import '../css/Home.css';
 
 const Home = () => {
+  // Cantidad real de usuarios registrados
+  const [userCount, setUserCount] = useState(0);
+
+  // Efecto secundario para consultar la API pública y actualizar las estadísticas en tiempo real
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        const response = await getAppStats();
+        if (response.data && typeof response.data.users_count === 'number') {
+          // Guardamos la cantidad real de usuarios directamente
+          setUserCount(response.data.users_count);
+        }
+      } catch (err) {
+        console.error("Error al obtener estadísticas de la app:", err);
+      }
+    };
+    fetchStats();
+  }, []);
+
+  // Generamos el listado dinámico de métricas para la cabecera (Hero)
+  const dynamicStats = [
+    { val: `+${userCount.toLocaleString('es-CL')}`, label: 'Usuarios activos' },
+    { val: '98%',   label: 'Satisfacción'     },
+    { val: 'Gratis',label: 'Para siempre'     },
+  ];
+
   return (
     <>
       <Navbar />
@@ -45,7 +73,7 @@ const Home = () => {
 
               {/* Stats */}
               <div className="d-flex gap-4 flex-wrap anim-4">
-                {HERO_STATS.map(({ val, label }) => (
+                {dynamicStats.map(({ val, label }) => (
                   <div key={label}>
                     <div className="fw-bold text-white home-stat-val">{val}</div>
                     <div className="home-stat-label">{label}</div>

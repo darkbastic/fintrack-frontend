@@ -11,6 +11,7 @@ const LoginForm = () => {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   // Si ya existe un token guardado en el navegador, redirigimos automáticamente al Dashboard
@@ -83,13 +84,21 @@ const LoginForm = () => {
             <input
               id="lg-password"
               name="password"
-              type="password"
+              type={showPassword ? "text" : "password"}
               className="rg-input"
               placeholder="••••••••"
               value={form.password}
               onChange={handleChange}
               required
             />
+            <button
+              type="button"
+              className="password-toggle-btn"
+              onClick={() => setShowPassword(!showPassword)}
+              aria-label={showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
+            >
+              <i className={`bi ${showPassword ? 'bi-eye-slash' : 'bi-eye'}`}></i>
+            </button>
           </div>
         </div>
 

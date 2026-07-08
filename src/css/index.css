@@ -368,7 +368,7 @@ h1, h2, h3, h4, h5, h6 { letter-spacing: -0.02em; }
 
 .profile-input {
   width: 100%;
-  padding: 0.65rem 1rem 0.65rem 2.6rem;
+  padding: 0.65rem 2.6rem 0.65rem 2.6rem;
   border: 1.5px solid #e2e8f0;
   border-radius: 10px;
   background: #f8fafc;
@@ -414,5 +414,26 @@ h1, h2, h3, h4, h5, h6 { letter-spacing: -0.02em; }
 .btn-cancel-profile:hover {
   background-color: #f1f5f9 !important;
   transform: translateY(-1px);
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  font-size: 1.15rem;
+  transition: color 0.2s;
+}
+
+.password-toggle-btn:hover {
+  color: #475569;
 }
 

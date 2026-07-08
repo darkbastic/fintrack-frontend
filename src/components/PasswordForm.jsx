@@ -13,6 +13,9 @@ const PasswordForm = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
+  const [showCurrent, setShowCurrent] = useState(false);
+  const [showNew, setShowNew] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -87,13 +90,21 @@ const PasswordForm = () => {
             <input
               id="pf-current-password"
               name="current_password"
-              type="password"
+              type={showCurrent ? "text" : "password"}
               className="profile-input"
               placeholder="••••••••"
               value={form.current_password}
               onChange={handleChange}
               required
             />
+            <button
+              type="button"
+              className="password-toggle-btn"
+              onClick={() => setShowCurrent(!showCurrent)}
+              aria-label={showCurrent ? "Ocultar contraseña" : "Mostrar contraseña"}
+            >
+              <i className={`bi ${showCurrent ? 'bi-eye-slash' : 'bi-eye'}`}></i>
+            </button>
           </div>
         </div>
 
@@ -104,13 +115,21 @@ const PasswordForm = () => {
             <input
               id="pf-new-password"
               name="new_password"
-              type="password"
+              type={showNew ? "text" : "password"}
               className="profile-input"
               placeholder="••••••••"
               value={form.new_password}
               onChange={handleChange}
               required
             />
+            <button
+              type="button"
+              className="password-toggle-btn"
+              onClick={() => setShowNew(!showNew)}
+              aria-label={showNew ? "Ocultar contraseña" : "Mostrar contraseña"}
+            >
+              <i className={`bi ${showNew ? 'bi-eye-slash' : 'bi-eye'}`}></i>
+            </button>
           </div>
         </div>
 
@@ -121,13 +140,21 @@ const PasswordForm = () => {
             <input
               id="pf-confirm-password"
               name="confirm_password"
-              type="password"
+              type={showConfirm ? "text" : "password"}
               className="profile-input"
               placeholder="••••••••"
               value={form.confirm_password}
               onChange={handleChange}
               required
             />
+            <button
+              type="button"
+              className="password-toggle-btn"
+              onClick={() => setShowConfirm(!showConfirm)}
+              aria-label={showConfirm ? "Ocultar contraseña" : "Mostrar contraseña"}
+            >
+              <i className={`bi ${showConfirm ? 'bi-eye-slash' : 'bi-eye'}`}></i>
+            </button>
           </div>
         </div>
 
